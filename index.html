@@ -1,0 +1,317 @@
+html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.E. N° 8170 César Vallejo - Comas</title>
+    <style>
+        /* Estilos Globales y Colores de la Institución */
+        :root {
+            --rojo-principal: #D32F2F;
+            --azul-principal: #1976D2;
+            --amarillo-borde: #FBC02D;
+            --oscuro: #212121;
+            --claro: #F5F5F5;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--claro);
+            color: var(--oscuro);
+            line-height: 1.6;
+        }
+
+        /* Encabezado (Header) */
+        header {
+            background-color: var(--blanco);
+            border-bottom: 4px solid var(--amarillo-borde);
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 70px;
+            height: 90px;
+            background-color: var(--azul-principal);
+            border: 3px solid var(--amarillo-borde);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .titulo-ie h1 {
+            font-size: 1.5rem;
+            color: var(--rojo-principal);
+        }
+
+        .titulo-ie p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* Menú de Navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--oscuro);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rojo-principal);
+        }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-principal), var(--rojo-principal));
+            color: var(--blanco);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Sección de Contenido Principal */
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+        .card {
+            background-color: var(--blanco);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--azul-principal);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--claro);
+            padding-bottom: 5px;
+        }
+
+        /* Sección Destacada del Enlace de Lecturas (UGEL 04) */
+        .enlace-destacado {
+            background-color: #E3F2FD;
+            border-left: 5px solid var(--azul-principal);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .btn-enlace {
+            display: inline-block;
+            background-color: var(--rojo-principal);
+            color: var(--blanco);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn-enlace:hover {
+            background-color: #B71C1C;
+        }
+
+        /* Estilos del Formulario de Contacto */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--azul-principal);
+        }
+
+        .btn-enviar {
+            background-color: var(--azul-principal);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background-color: #1565C0;
+        }
+
+        .mensaje-exito {
+            display: none;
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Pie de Página (Footer) */
+        footer {
+            background-color: #333;
+            color: var(--blanco);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Logo e Identidad -->
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <div class="logo-placeholder">I.E.</div>
+                <div class="titulo-ie">
+                    <h1>I.E. N° 8170 CÉSAR VALLEJO</h1>
+                    <p>Año Nuevo - Comas | UGEL 04</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#lecturas">Lecturas 2026</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero" id="inicio">
+        <h2>"Estudio, Trabajo y Triunfo"</h2>
+        <p>Formando líderes con valores y excelencia académica en el distrito de Comas.</p>
+    </section>
+
+    <!-- Contenido Integrado -->
+    <main class="main-content">
+        <!-- Columna de Información Académica y Formulario -->
+        <section>
+            <div class="card" id="nosotros">
+                <h3>Bienvenidos a Nuestra Institución</h3>
+                <p>La Institución Educativa N° 8170 "César Vallejo" ofrece educación integral en los niveles de Inicial, Primaria y Secundaria, contando con la modalidad de Jornada Escolar Completa (JEC) para potenciar el aprendizaje de nuestros estudiantes.</p>
+            </div>
+
+            <!-- Enlace institucional -->
+            <div class="card" id="lecturas">
+                <h3>Compromiso Lector 2026</h3>
+                <p>Promovemos activamente el desarrollo de la comprensión lectora en coordinación con las directrices de nuestra UGEL. Accede de manera oficial a todo el material interactivo del año en curso:</p>
+                
+                <div class="enlace-destacado">
+                    <h4>Plataforma de Lecturas Semanales 2026</h4>
+                    <p>Encuentra las lecturas correspondientes a cada semana del año escolar y resuelve tus cuestionarios en línea.</p>
+                    <a href="https://ugel04.gob.pe" target="_blank" class="btn-enlace">
+                        Ir a Lecturas Semanales UGEL 04 →
+                    </a>
+                </div>
+            </div>
+
+            <!-- NUEVO FORMULARIO DE CONTACTO -->
+            <div class="card" id="contacto">
+                <h3>Módulo de Consultas y Matrículas</h3>
+                <p>Si desea recibir información sobre el proceso de matrícula o tiene alguna consulta, complete el formulario y nos comunicaremos con usted a la brevedad.</p>
+                
+                <form id="formularioContacto" onsubmit="enviarFormulario(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo del Padre/Apoderado:</label>
+                        <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Número de Celular o Teléfono:</label>
+                        <input type="tel" id="telefono" required placeholder="Ej. 987654321">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivel">Nivel de Interés:</label>
+                        <select id="nivel" required>
+                            <option value="" disabled selected>Seleccione un nivel...</option>
+                            <option value="inicial">Inicial</option>
