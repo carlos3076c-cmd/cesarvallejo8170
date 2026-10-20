@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -173,64 +172,6 @@ html
             background-color: #B71C1C;
         }
 
-        /* Estilos del Formulario de Contacto */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus, 
-        .form-group textarea:focus {
-            border-color: var(--azul-principal);
-        }
-
-        .btn-enviar {
-            background-color: var(--azul-principal);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
-        }
-
-        .btn-enviar:hover {
-            background-color: #1565C0;
-        }
-
-        .mensaje-exito {
-            display: none;
-            background-color: #E8F5E9;
-            color: #2E7D32;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 15px;
-            font-weight: bold;
-            text-align: center;
-        }
-
         /* Pie de Página (Footer) */
         footer {
             background-color: #333;
@@ -258,8 +199,7 @@ html
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#lecturas">Lecturas 2026</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#lecturas">Lecturas Semana 32</a></li>
                 </ul>
             </nav>
         </div>
@@ -273,45 +213,43 @@ html
 
     <!-- Contenido Integrado -->
     <main class="main-content">
-        <!-- Columna de Información Académica y Formulario -->
+        <!-- Columna de Información Académica -->
         <section>
             <div class="card" id="nosotros">
                 <h3>Bienvenidos a Nuestra Institución</h3>
                 <p>La Institución Educativa N° 8170 "César Vallejo" ofrece educación integral en los niveles de Inicial, Primaria y Secundaria, contando con la modalidad de Jornada Escolar Completa (JEC) para potenciar el aprendizaje de nuestros estudiantes.</p>
             </div>
 
-            <!-- Enlace institucional -->
+            <!-- ENLACE DE LECTURAS ACTUALIZADO -->
             <div class="card" id="lecturas">
                 <h3>Compromiso Lector 2026</h3>
-                <p>Promovemos activamente el desarrollo de la comprensión lectora en coordinación con las directrices de nuestra UGEL. Accede de manera oficial a todo el material interactivo del año en curso:</p>
+                <p>Promovemos activamente el desarrollo de la comprensión lectora en coordinación con las directrices de nuestra UGEL. Accede de manera oficial al material interactivo de la semana actual:</p>
                 
                 <div class="enlace-destacado">
-                    <h4>Plataforma de Lecturas Semanales 2026</h4>
-                    <p>Encuentra las lecturas correspondientes a cada semana del año escolar y resuelve tus cuestionarios en línea.</p>
-                    <a href="https://ugel04.gob.pe" target="_blank" class="btn-enlace">
-                        Ir a Lecturas Semanales UGEL 04 →
+                    <h4>Plataforma de Lecturas - Semana 32</h4>
+                    <p>Encuentra las lecturas correspondientes a la semana 32 del año escolar y resuelve tus cuestionarios en línea de forma directa.</p>
+                    <a href="https://intranet.app.ugel04.gob.pe/lea/lecturas-semanales/2026/semana-32" target="_blank" class="btn-enlace">
+                        Ir a Lecturas Semana 32 (UGEL 04) →
                     </a>
                 </div>
             </div>
+        </section>
 
-            <!-- NUEVO FORMULARIO DE CONTACTO -->
-            <div class="card" id="contacto">
-                <h3>Módulo de Consultas y Matrículas</h3>
-                <p>Si desea recibir información sobre el proceso de matrícula o tiene alguna consulta, complete el formulario y nos comunicaremos con usted a la brevedad.</p>
-                
-                <form id="formularioContacto" onsubmit="enviarFormulario(event)">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo del Padre/Apoderado:</label>
-                        <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
-                    </div>
+        <!-- Columna Lateral de Datos -->
+        <aside>
+            <div class="card">
+                <h3>Información Clave</h3>
+                <p><strong>Niveles:</strong> Inicial, Primaria, Secundaria (JEC)</p>
+                <p><strong>Ubicación:</strong> Av. José Carlos Mariátegui s/n, Año Nuevo, Comas</p>
+                <p><strong>Jurisdicción:</strong> Unidad de Gestión Educativa Local N° 04</p>
+            </div>
+        </aside>
+    </main>
 
-                    <div class="form-group">
-                        <label for="telefono">Número de Celular o Teléfono:</label>
-                        <input type="tel" id="telefono" required placeholder="Ej. 987654321">
-                    </div>
+    <footer>
+        <p>© 2026 I.E. N° 8170 César Vallejo. Todos los derechos reservados.</p>
+        <p>Comas, Lima, Perú</p>
+    </footer>
 
-                    <div class="form-group">
-                        <label for="nivel">Nivel de Interés:</label>
-                        <select id="nivel" required>
-                            <option value="" disabled selected>Seleccione un nivel...</option>
-                            <option value="inicial">Inicial</option>
+</body>
+</html>
